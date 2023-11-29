@@ -4,7 +4,6 @@ import * as errors from "./errors";
 
 export const run = async () => {
   const context = github.context;
-
   let token = process.env["GITHUB_TOKEN"] || "";
   if (token === "") {
     token = core.getInput("github_token");
