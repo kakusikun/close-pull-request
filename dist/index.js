@@ -25,10 +25,6 @@ function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && 
 const run = async () => {
   const context = github.context;
 
-  if (context.eventName !== "pull_request_target") {
-    throw errors.ignoreEvent;
-  }
-
   let token = process.env["GITHUB_TOKEN"] || "";
 
   if (token === "") {
