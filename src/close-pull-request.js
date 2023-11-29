@@ -4,9 +4,6 @@ import * as errors from "./errors";
 
 export const run = async () => {
   const context = github.context;
-  if (context.eventName !== "pull_request_target") {
-    throw errors.ignoreEvent;
-  }
 
   let token = process.env["GITHUB_TOKEN"] || "";
   if (token === "") {
